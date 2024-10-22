@@ -22,7 +22,7 @@
           <a href="{{ route('students.edit', $student->id) }}">Edit</a>
           <form action="{{ route('students.delete', $student->id) }}" method="POST">
              @csrf
-             @method('DELETE');
+             @method('DELETE')
             <button type="submit" onclick="">Delete</button>
           </form>
         </td>

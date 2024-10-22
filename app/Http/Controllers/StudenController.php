@@ -23,7 +23,8 @@ class StudenController extends Controller
             'name' => 'required|string',
             'email' => 'required|email',
             'password' => 'required',
-            'phone' => 'required'
+            'phone' => 'required',
+            'role' => 'required'
         ]);
 
         try{
@@ -32,6 +33,7 @@ class StudenController extends Controller
             $student->email = $request->email;
             $student->password =Hash::make($request->password);
             $student->phone = $request->phone;
+            $student->role = $request->role;
             $student->save();
             return redirect('students')->with("message", 'student  create success');
         }catch(Exception $e){
@@ -49,7 +51,8 @@ class StudenController extends Controller
         $validate = $request->validate([
             'name' => 'required|string',
             'email' => 'required|email',
-            'phone' => 'required'
+            'phone' => 'required',
+            'role' => 'required'
         ]);
 
         try{
@@ -57,10 +60,11 @@ class StudenController extends Controller
             $student->name = $request->name;
             $student->email = $request->email;
             $student->phone = $request->phone;
+            $student->role = $request->role;
             $student->save();
             return redirect('students')->with("message", 'student  update success');
         }catch(Exception $e){
-            return redirect('student.index')->with("message", 'student not create');
+            return redirect('students')->with("message", 'student not create');
         }
         
     }

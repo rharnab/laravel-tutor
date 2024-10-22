@@ -2,7 +2,7 @@
 @section('content')
 <form method="POST" action="{{ route('students.update', $student->id) }}">
     @csrf
-    @method('put');
+    @method('put')
     @if($errors->any())
         <ul>
             @foreach ($errors->all() as $error)
@@ -22,6 +22,13 @@
         <label for="phone" class="form-label">Phone</label>
         <input type="text" class="form-control" id="phone" aria-describedby="phone" name="phone" value="{{ $student->phone }}">
     </div>
+    <div class="mb-3">
+        <select class="form-select" aria-label="Default select example" name="role">
+          <option selected>Role</option>
+          <option value="ADMIN">Admin</option>
+          <option value="STUDENT">Student</option>
+        </select>
+       </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 @endsection

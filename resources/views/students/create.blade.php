@@ -25,6 +25,13 @@
       <label for="password" class="form-label">Password</label>
       <input type="password" class="form-control" id="password" name="password">
     </div>
+     <div class="mb-3">
+      <select class="form-select" aria-label="Default select example" name="role">
+        <option selected>Role</option>
+        <option value="ADMIN">Admin</option>
+        <option value="STUDENT">Student</option>
+      </select>
+     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 @endsection
