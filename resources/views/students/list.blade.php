@@ -1,4 +1,4 @@
-@extends('students.index')
+@extends('layouts')
 @section('content')
 @if(Session::has('message'))
       <p>{{  Session::get('message') }}</p>
@@ -9,6 +9,7 @@
       <th scope="col">Name</th>
       <th scope="col">email</th>
       <th scope="col">phone</th>
+      <th scope="col">posts</th>
       <th scope="col">Option</th>
     </tr>
   </thead>
@@ -18,6 +19,7 @@
         <th scope="row">{{ $student->name }}</th>
         <td>{{ $student->email }}</td>
         <td>{{ $student->phone }}</td>
+        <td>{{ $student->posts->count() }}</td>
         <td>
           <a href="{{ route('students.edit', $student->id) }}">Edit</a>
           <form action="{{ route('students.delete', $student->id) }}" method="POST">

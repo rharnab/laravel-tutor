@@ -1,4 +1,4 @@
-@extends('students.index')
+@extends('layouts')
 @section('content')
 <form method="POST" action="{{ route('students.store') }}">
     @csrf

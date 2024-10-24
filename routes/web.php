@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StudenController;
 use Illuminate\Support\Facades\Route;
@@ -35,4 +36,11 @@ Route::get('students', [StudenController::class, 'index'])->name('students.index
 Route::get('students/edit/{id}', [StudenController::class, 'edit'])->name('students.edit')->middleware('admin');
 Route::put('students/edit/{id}', [StudenController::class, 'update'])->name('students.update')->middleware('admin');
 Route::delete('students/delete/{id}', [StudenController::class, 'delete'])->name('students.delete')->middleware('admin');
+
+Route::get('posts/create', [PostController::class, 'create'])->name('posts.create');
+Route::post('posts/create', [PostController::class, 'store'])->name('posts.store');
+Route::get('posts', [PostController::class, 'index'])->name('posts.index');
+Route::get('posts/edit/{id}', [PostController::class, 'edit'])->name('posts.edit');
+Route::put('posts/edit/{id}', [PostController::class, 'update'])->name('posts.update');
+Route::delete('posts/delete/{id}', [PostController::class, 'delete'])->name('posts.delete');
 require __DIR__.'/auth.php';
