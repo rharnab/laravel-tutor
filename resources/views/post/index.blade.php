@@ -17,7 +17,7 @@
       <tr>
         <th scope="row">{{ $post->title }}</th>
         <td>{{ $post->description }}</td>
-        <td>{{ $post->user->name}}</td>
+        <td>{{ $post->user->name}} {{ $post->images->count() }}</td>
         <td>
           <a href="{{ route('posts.edit', $post->id) }}">Edit</a>
           <form action="{{ route('posts.delete', $post->id) }}" method="POST">

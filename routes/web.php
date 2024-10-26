@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StudenController;
@@ -43,4 +44,6 @@ Route::get('posts', [PostController::class, 'index'])->name('posts.index');
 Route::get('posts/edit/{id}', [PostController::class, 'edit'])->name('posts.edit');
 Route::put('posts/edit/{id}', [PostController::class, 'update'])->name('posts.update');
 Route::delete('posts/delete/{id}', [PostController::class, 'delete'])->name('posts.delete');
+
+Route::get('images', [ImageController:: class, 'index']);
 require __DIR__.'/auth.php';
